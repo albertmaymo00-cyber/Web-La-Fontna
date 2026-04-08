@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pizzas | La Fontana</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="menu-page-body">
+    <main class="mobile-menu-page">
+        <header class="menu-topbar">
+            <a href="index.html" class="icon-btn" aria-label="Volver al inicio">
+                <i class="fa-solid fa-arrow-left"></i>
+            </a>
+
+            <h1>Pizzas</h1>
+
+            <button class="icon-btn" aria-label="Buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+        </header>
+
+        <section class="category-slider">
+            <button class="category-pill active" data-filter="clasicas">Clásicas</button>
+            <button class="category-pill" data-filter="especiales">Especiales</button>
+            <button class="category-pill" data-filter="picantes">Picantes</button>
+            <button class="category-pill" data-filter="vegetarianas">Vegetarianas</button>
+        </section>
+
+        <section class="menu-section active" data-section="clasicas">
+            <div class="section-title-block">
+                <h2>Clásicas</h2>
+            </div>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Margarita</h3>
+                    <p>
+                        Tomate, mozzarella, albahaca fresca y aceite de oliva virgen extra.
+                    </p>
+                    <div class="list-card-meta">
+                        <span class="price">10.50 €</span>
+                    </div>
+                </div>
+
+                <button class="list-card-image"
+                    data-full="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=1200&q=80"
+                    aria-label="Ampliar imagen de Pizza Margarita">
+                    <img src="https://images.unsplash.com/photo-1604382355076-af4b0eb60143?auto=format&fit=crop&w=500&q=80"
+                        alt="Pizza Margarita" />
+                </button>
+            </article>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Prosciutto e Funghi</h3>
+                    <p>
+                        Tomate, mozzarella, jamón cocido y champiñones frescos.
+                    </p>
+                    <div class="list-card-meta">
+                        <span class="price">13.20 €</span>
+                    </div>
+                </div>
+
+                <button class="list-card-image"
+                    data-full="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"
+                    aria-label="Ampliar imagen de Pizza Prosciutto e Funghi">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=500&q=80"
+                        alt="Pizza Prosciutto e Funghi" />
+                </button>
+            </article>
+        </section>
+
+        <section class="menu-section" data-section="especiales">
+            <div class="section-title-block">
+                <h2>Especiales</h2>
+            </div>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Burrata Speciale</h3>
+                    <p>
+                        Base de tomate, rúcula, tomate cherry, burrata cremosa y pesto suave.
+                    </p>
+                    <div class="list-card-meta">
+                        <span class="price">15.90 €</span>
+                    </div>
+                </div>
+
+                <button class="list-card-image"
+                    data-full="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=1200&q=80"
+                    aria-label="Ampliar imagen de Pizza Burrata Speciale">
+                    <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=500&q=80"
+                        alt="Pizza Burrata Speciale" />
+                </button>
+            </article>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Quattro Formaggi</h3>
+                    <p>
+                        Mozzarella, gorgonzola, parmesano y queso de cabra.
+                    </p>
+                    <div class="list-card-meta">
+                        <span class="price">14.80 €</span>
+                    </div>
+                </div>
+
+                <button class="list-card-image"
+                    data-full="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=1200&q=80"
+                    aria-label="Ampliar imagen de Pizza Quattro Formaggi">
+                    <img src="https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=500&q=80"
+                        alt="Pizza Quattro Formaggi" />
+                </button>
+            </article>
+        </section>
+
+        <section class="menu-section" data-section="picantes">
+            <div class="section-title-block">
+                <h2>Picantes</h2>
+            </div>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Diavola <i class="fa-solid fa-pepper-hot inline-icon"></i></h3>
+                    <p>
+                        Tomate, mozzarella, salami picante y toque de guindilla.
+                    </p>
+                    <div class="list-card-meta">
+                        <span class="price">14.50 €</span>
+                    </div>
+                </div>
+
+                <button class="list-card-image"
+                    data-full="https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=1200&q=80"
+                    aria-label="Ampliar imagen de Pizza Diavola">
+                    <img src="https://images.unsplash.com/photo-1594007654729-407eedc4be65?auto=format&fit=crop&w=500&q=80"
+                        alt="Pizza Diavola" />
+                </button>
+            </article>
+        </section>
+
+        <section class="menu-section" data-section="vegetarianas">
+            <div class="section-title-block">
+                <h2>Vegetarianas</h2>
+            </div>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Vegetale <i class="fa-solid fa-leaf inline-icon"></i></h3>
+                    <p>
+                        Tomate, mozzarella, calabacín, berenjena, pimiento y cebolla roja.
+                    </p>
+                    <div class="list-card-meta">
+                        <span class="price">13.90 €</span>
+                    </div>
+                </div>
+
+                <button class="list-card-image"
+                    data-full="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80"
+                    aria-label="Ampliar imagen de Pizza Vegetale">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=500&q=80"
+                        alt="Pizza Vegetale" />
+                </button>
+            </article>
+        </section>
+    </main>
+
+    <div class="image-modal" id="imageModal" aria-hidden="true">
+        <button class="image-modal-close" id="closeModal" aria-label="Cerrar imagen">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <img id="modalImage" src="" alt="Imagen ampliada de la pizza" />
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
