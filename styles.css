@@ -141,7 +141,7 @@ img {
     min-height: fit-content;
     display: flex;
     align-items: center;
-    background-image: url("/Assets/fondo2fontana.png");
+    background-image: url("Assets/fondo2fontana.png");
     background-size: cover;
     background-position: center;
     padding: 80px 0 120px;
