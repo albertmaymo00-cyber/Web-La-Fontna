@@ -1,19 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
+
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Entrantes y platos | La Fontana</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="alergenos.css" />
 </head>
+<script>
+    fetch("alergenos.html")
+        .then(response => response.text())
+        .then(svg => {
+            document.getElementById("svg-alergenos").innerHTML = svg;
+        })
+        .catch(error => {
+            console.error("No se pudieron cargar los iconos de alérgenos:", error);
+        });
+</script>
 
 <body class="menu-page-body">
+    <div id="svg-alergenos" aria-hidden="true"></div>
+
     <main class="mobile-menu-page">
         <header class="menu-topbar">
             <a href="index.html" class="icon-btn" aria-label="Volver al inicio">
@@ -40,158 +54,254 @@
                 <h2>Para picar</h2>
             </div>
 
+            <!-- LEYENDA -->
+            <section class="allergen-legend" aria-label="Leyenda de alérgenos">
+                <div class="allergen-legend-item">
+                    <svg class="allergen-icon gluten" aria-hidden="true">
+                        <use href="#icon-gluten"></use>
+                    </svg>
+                    <span>Gluten</span>
+                </div>
+    
+</svg>
+                <div class="allergen-legend-item">
+                    <svg class="allergen-icon crustaceos" aria-hidden="true">
+                        <use href="#icon-crustaceos"></use>
+                    </svg>
+                    <span>Crustáceos</span>
+                </div>
+
+                <div class="allergen-legend-item">
+                    <svg class="allergen-icon huevo" aria-hidden="true">
+                        <use href="#icon-huevo"></use>
+                    </svg>
+                    <span>Huevo</span>
+                </div>
+
+                <div class="allergen-legend-item">
+                    <svg class="allergen-icon pescado" aria-hidden="true">
+                        <use href="#icon-pescado"></use>
+                    </svg>
+                    <span>Pescado</span>
+                </div>
+
+                <div class="allergen-legend-item">
+                    <svg class="allergen-icon moluscos" aria-hidden="true">
+                        <use href="#icon-moluscos"></use>
+                    </svg>
+                    <span>Moluscos</span>
+                </div>
+
+                <div class="allergen-legend-item">
+                    <svg class="allergen-icon leche" aria-hidden="true">
+                        <use href="#icon-leche"></use>
+                    </svg>
+                    <span>Leche</span>
+                </div>
+
+                <div class="allergen-legend-item">
+                    <svg class="allergen-icon sulfitos" aria-hidden="true">
+                        <use href="#icon-sulfitos"></use>
+                    </svg>
+                    <span>Sulfitos</span>
+                </div>
+
+                <div class="allergen-legend-item">
+                    <svg class="allergen-icon mostaza" aria-hidden="true">
+                        <use href="#icon-mostaza"></use>
+                    </svg>
+                    <span>Mostaza</span>
+                </div>
+            </section>
+
+            <!-- PLATOS -->
             <article class="list-card">
                 <div class="list-card-content">
                     <h3>Calamares a la Romana o Andaluza</h3>
-                    <p>
-                        Crujientes anillos de calamar bañados en una masa ligera y fritos
-                        hasta quedar dorados.
-                    </p>
+                    <p>Crujientes anillos de calamar rebozados y fritos hasta quedar dorados.</p>
+                    <div class="list-card-meta">
+                        <span class="price">11.50 €</span>
+                    </div>
+                    <div class="allergens" aria-label="Alérgenos">  
+                        <svg class="allergen-icon gluten" title="Gluten" aria-label="Gluten" data-name="Gluten">
+                            <use href="#icon-gluten"></use>
+                        </svg>
+                        <svg class="allergen-icon huevo" title="Huevo" aria-label="Huevo" data-name="huevo">
+                            <use href="#icon-huevo"></use>
+                        </svg>
+                        <svg class="allergen-icon moluscos" title="Moluscos" aria-label="Moluscos" data-name="moluscos">
+                            <use href="#icon-moluscos"></use>
+                        </svg>
+                    </div>
+        
+                </div>
+            </article>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Patatas Bravas</h3>
+                    <p>Patatas doradas servidas con salsa brava de toque intenso y sabroso.</p>
+                    <div class="list-card-meta">
+                        <span class="price">11.50 €</span>
+                    </div>
+                    <div class="allergens" aria-label="Alérgenos">
+                        <svg class="allergen-icon mostaza" title="Mostaza" aria-label="Mostaza" data-name="Mostaza">
+                            <use href="#icon-mostaza"></use>
+                        </svg>
+                    </div>
+                </div>
+            </article>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Pulpo a la Gallega</h3>
+                    <p>Tierno pulpo al estilo gallego con su preparación más tradicional.</p>
+                    <div class="list-card-meta">
+                        <span class="price">11.50 €</span>
+                    </div>
+                    <div class="allergens" aria-label="Alérgenos">
+                        <svg class="allergen-icon moluscos" title="Moluscos" aria-label="Moluscos" data-name="moluscos">
+                            <use href="#icon-moluscos"></use>
+                        </svg>
+                    </div>
+                </div>
+            </article>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Mejillones al Vapor o a la Marinera</h3>
+                    <p>Mejillones cocinados al vapor o con sabrosa salsa marinera.</p>
+                    <div class="list-card-meta">
+                        <span class="price">11.50 €</span>
+                    </div>
+                    <div class="allergens" aria-label="Alérgenos">
+                        <svg class="allergen-icon moluscos" title="Moluscos" aria-label="Moluscos" data-name="moluscos">
+                            <use href="#icon-moluscos"></use>
+                        </svg>
+                        <svg class="allergen-icon sulfitos" title="Sulfitos" aria-label="Sulfitos" data-name="Sulfitos">
+                            <use href="#icon-sulfitos"></use>
+                        </svg>
+                    </div>
+                </div>
+            </article>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Sepia a la Plancha Troceada</h3>
+                    <p>Sepia troceada a la plancha, tierna y llena de sabor.</p>
+                    <div class="list-card-meta">
+                        <span class="price">11.50 €</span>
+                    </div>
+                    <div class="allergens" aria-label="Alérgenos">
+                        <svg class="allergen-icon moluscos" title="Moluscos" aria-label="Moluscos" data-name="moluscos">
+                            <use href="#icon-moluscos"></use>
+                        </svg>
+                    </div>
+                </div>
+            </article>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Chipirones</h3>
+                    <p>Chipirones cocinados para resaltar todo su sabor marino.</p>
+                    <div class="list-card-meta">
+                        <span class="price">11.50 €</span>
+                    </div>
+                    <div class="allergens" aria-label="Alérgenos">
+                        <svg class="allergen-icon moluscos" title="Moluscos" aria-label="Moluscos" data-name="moluscos">
+                            <use href="#icon-moluscos"></use>
+                        </svg>
+                    </div>
+                </div>
+            </article>
+
+            <article class="list-card">
+                <div class="list-card-content">
+                    <h3>Olivas con Hueso</h3>
+                    <p>Aceitunas con hueso, ideales para acompañar el aperitivo.</p>
+                    <div class="allergens" aria-label="Alérgenos"></div>
                     <div class="list-card-meta">
                         <span class="price">11.50 €</span>
                     </div>
                 </div>
-
-                <button class="list-card-image" aria-label="Ampliar imagen de Aros de cebolla"
-                    data-full="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=500&q=80"
-                        alt="Aros de cebolla" />
-                </button>
             </article>
 
             <article class="list-card">
                 <div class="list-card-content">
-                    <h3>Aros de cebolla</h3>
-                    <p>
-                        Crujientes anillos de cebolla bañados en una masa ligera y fritos
-                        hasta quedar dorados.
-                    </p>
+                    <h3>Olivas Rellenas</h3>
+                    <p>Aceitunas rellenas, perfectas para picar y compartir.</p>
                     <div class="list-card-meta">
-                        <span class="price">7.50 €</span>
+                        <span class="price">11.50 €</span>
+                    </div>
+                    <div class="allergens" aria-label="Alérgenos">
+                        <svg class="allergen-icon pescado" title="Pescado" aria-label="Pescado" data-name="Pescado">
+                            <use href="#icon-pescado"></use>
+                        </svg>
                     </div>
                 </div>
-            
-                <button class="list-card-image" aria-label="Ampliar imagen de Aros de cebolla"
-                    data-full="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=500&q=80"
-                        alt="Aros de cebolla" />
-                </button>
             </article>
 
             <article class="list-card">
                 <div class="list-card-content">
-                    <h3>Aros de cebolla</h3>
-                    <p>
-                        Crujientes anillos de cebolla bañados en una masa ligera y fritos
-                        hasta quedar dorados.
-                    </p>
+                    <h3>Brochetas de Pollo</h3>
+                    <p>Jugosas brochetas de pollo cocinadas al punto.</p>
+                    <div class="allergens" aria-label="Alérgenos"></div>
                     <div class="list-card-meta">
-                        <span class="price">7.50 €</span>
+                        <span class="price">11.50 €</span>
                     </div>
                 </div>
-            
-                <button class="list-card-image" aria-label="Ampliar imagen de Aros de cebolla"
-                    data-full="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=500&q=80"
-                        alt="Aros de cebolla" />
-                </button>
             </article>
 
             <article class="list-card">
                 <div class="list-card-content">
-                    <h3>Aros de cebolla</h3>
-                    <p>
-                        Crujientes anillos de cebolla bañados en una masa ligera y fritos
-                        hasta quedar dorados.
-                    </p>
+                    <h3>Callos de Ternera</h3>
+                    <p>Tradicionales callos de ternera elaborados con una receta llena de sabor.</p>
+                    <div class="allergens" aria-label="Alérgenos"></div>
                     <div class="list-card-meta">
-                        <span class="price">7.50 €</span>
+                        <span class="price">11.50 €</span>
                     </div>
                 </div>
-            
-                <button class="list-card-image" aria-label="Ampliar imagen de Aros de cebolla"
-                    data-full="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=500&q=80"
-                        alt="Aros de cebolla" />
-                </button>
             </article>
 
             <article class="list-card">
                 <div class="list-card-content">
-                    <h3>Aros de cebolla</h3>
-                    <p>
-                        Crujientes anillos de cebolla bañados en una masa ligera y fritos
-                        hasta quedar dorados.
-                    </p>
+                    <h3>Boquerones en Vinagre</h3>
+                    <p>Boquerones marinados en vinagre, frescos y tradicionales.</p>
                     <div class="list-card-meta">
-                        <span class="price">7.50 €</span>
+                        <span class="price">11.50 €</span>
+                    </div>
+                    <div class="allergens" aria-label="Alérgenos">
+                        <svg class="allergen-icon pescado" title="Pescado" aria-label="Pescado" data-name="Pescado">
+                            <use href="#icon-pescado"></use>
+                        </svg>
+                        <svg class="allergen-icon sulfitos" title="Sulfitos" aria-label="Sulfitos" data-name="Sulfitos">
+                            <use href="#icon-sulfitos"></use>
+                        </svg>
                     </div>
                 </div>
-            
-                <button class="list-card-image" aria-label="Ampliar imagen de Aros de cebolla"
-                    data-full="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=500&q=80"
-                        alt="Aros de cebolla" />
-                </button>
             </article>
 
             <article class="list-card">
                 <div class="list-card-content">
-                    <h3>Aros de cebolla</h3>
-                    <p>
-                        Crujientes anillos de cebolla bañados en una masa ligera y fritos
-                        hasta quedar dorados.
-                    </p>
+                    <h3>Langostinos a la Plancha</h3>
+                    <p>Langostinos a la plancha, jugosos y con todo el sabor del mar.</p>
                     <div class="list-card-meta">
-                        <span class="price">7.50 €</span>
+                        <span class="price">11.50 €</span>
+                    </div>
+                    <div class="allergens" aria-label="Alérgenos">
+                        <svg class="allergen-icon crustaceos" title="Crustáceos" aria-label="Crustáceos" data-name="Crustáceos">
+                            <use href="#icon-crustaceos"></use>
+                        </svg>
                     </div>
                 </div>
-            
-                <button class="list-card-image" aria-label="Ampliar imagen de Aros de cebolla"
-                    data-full="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1639024471283-03518883512d?auto=format&fit=crop&w=500&q=80"
-                        alt="Aros de cebolla" />
-                </button>
-            </article>
-
-            <article class="list-card">
-                <div class="list-card-content">
-                    <h3>Hummus y crudité <i class="fa-solid fa-leaf inline-icon"></i></h3>
-                    <p>
-                        Deliciosa crema de garbanzos con tahini, ajo, limón y aceite de oliva,
-                        acompañada de verduras frescas.
-                    </p>
-                    <div class="list-card-meta">
-                        <span class="price">7.50 €</span>
-                    </div>
-                </div>
-
-                <button class="list-card-image" aria-label="Ampliar imagen de Hummus y crudité"
-                    data-full="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=500&q=80"
-                        alt="Hummus y crudité" />
-                </button>
-            </article>
-
-            <article class="list-card">
-                <div class="list-card-content">
-                    <h3>Nachos con salsa picante <i class="fa-solid fa-pepper-hot inline-icon"></i></h3>
-                    <p>
-                        Crujientes nachos de maíz cubiertos con queso fundido, jalapeños y
-                        salsa picante casera.
-                    </p>
-                    <div class="list-card-meta">
-                        <span class="price">8.90 €</span>
-                    </div>
-                </div>
-
-                <button class="list-card-image" aria-label="Ampliar imagen de Nachos con salsa picante"
-                    data-full="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=1200&q=80">
-                    <img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?auto=format&fit=crop&w=500&q=80"
-                        alt="Nachos con salsa picante" />
-                </button>
             </article>
         </section>
+    </main>
+
+    
+</body>
+
+</html>
 
         <section class="menu-section" data-section="ensaladas">
             <div class="section-title-block">
@@ -332,14 +442,61 @@
         </section>
     </main>
 
-    <div class="image-modal" id="imageModal" aria-hidden="true">
-        <button class="image-modal-close" id="closeModal" aria-label="Cerrar imagen">
-            <i class="fa-solid fa-xmark"></i>
-        </button>
-        <img id="modalImage" src="" alt="Imagen ampliada del plato" />
-    </div>
+        <div class="image-modal" id="imageModal" aria-hidden="true">
+            <button class="image-modal-close" id="closeModal" aria-label="Cerrar imagen">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <img id="modalImage" src="" alt="Imagen ampliada del plato" />
+        </div>
+        
+        <div id="allergen-tooltip"></div>
+        
+        <script src="script.js"></script>
+        
+        <script>
+            fetch("alergenos.html")
+                .then(response => response.text())
+                .then(svg => {
+                    document.getElementById("svg-alergenos").innerHTML = svg;
+                })
+                .catch(error => {
+                    console.error("No se pudieron cargar los iconos de alérgenos:", error);
+                });
+        </script>
+        
+        <script>
+            const icons = document.querySelectorAll(".allergen-icon[data-name]");
+            const tooltip = document.getElementById("allergen-tooltip");
 
-    <script src="script.js"></script>
-</body>
+            let activeIcon = null;
 
-</html>
+            icons.forEach(icon => {
+                icon.addEventListener("click", (e) => {
+                    e.stopPropagation();
+
+                    const name = icon.dataset.name;
+                    const rect = icon.getBoundingClientRect();
+
+                    if (activeIcon === icon) {
+                        tooltip.classList.remove("active");
+                        activeIcon = null;
+                        return;
+                    }
+
+                    tooltip.textContent = name;
+                    tooltip.style.left = rect.left + rect.width / 2 + "px";
+                    tooltip.style.top = rect.top + "px";
+
+                    tooltip.classList.add("active");
+                    activeIcon = icon;
+                });
+            });
+
+            document.addEventListener("click", () => {
+                tooltip.classList.remove("active");
+                activeIcon = null;
+            });
+        </script>
+        </body>
+        
+        </html>

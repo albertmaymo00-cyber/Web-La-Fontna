@@ -3,6 +3,10 @@
     --bg-soft: #131313;
     --surface: #171717;
     --surface-2: #202020;
+    --bg-dark-rgb: 11, 11, 11;
+    --bg-soft-rgb: 19, 19, 19;
+    --surface-rgb: 23, 23, 23;
+    --surface-2-rgb: 32, 32, 32;
     --text-light: #ffffff;
     --muted-light: #b8b8b8;
     --border-dark: rgba(255, 255, 255, 0.08);
@@ -268,9 +272,66 @@ img {
     padding: 96px 0;
 }
 
-.section-dark {
-    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-soft) 100%);
+.about-image {
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    border-radius: 0;
 }
+
+.about-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        /* izquierda */
+        linear-gradient(to right,
+            rgba(var(--bg-dark-rgb), 1) 0.5%,
+            rgba(var(--bg-dark-rgb), 0.92) 6%,
+            rgba(var(--bg-dark-rgb), 0.72) 12%,
+            rgba(var(--bg-dark-rgb), 0.35) 18%,
+            rgba(var(--bg-dark-rgb), 0) 48%),
+
+        /* derecha */
+        linear-gradient(to left,
+            rgba(var(--bg-dark-rgb), 1) 0.5%,
+            rgba(var(--bg-dark-rgb), 0.92) 6%,
+            rgba(var(--bg-dark-rgb), 0.72) 12%,
+            rgba(var(--bg-dark-rgb), 0.35) 18%,
+            rgba(var(--bg-dark-rgb), 0) 48%),
+
+        /* arriba */
+        linear-gradient(to bottom,
+            rgba(var(--bg-dark-rgb), 1) 0.5%,
+            rgba(var(--bg-dark-rgb), 0.82) 7%,
+            rgba(var(--bg-dark-rgb), 0.45) 15%,
+            rgba(var(--bg-dark-rgb), 0) 48%),
+
+        /* abajo */
+        linear-gradient(to top,
+            rgba(var(--bg-dark-rgb), 1) 0.5%,
+            rgba(var(--bg-dark-rgb), 0.95) 10%,
+            rgba(var(--bg-dark-rgb), 0.72) 18%,
+            rgba(var(--bg-dark-rgb), 0.35) 26%,
+            rgba(var(--bg-dark-rgb), 0) 48%),
+
+        /* viñeta general */
+        radial-gradient(ellipse at center,
+            rgba(var(--bg-dark-rgb), 0) 48%,
+            rgba(var(--bg-dark-rgb), 0.20) 62%,
+            rgba(var(--bg-dark-rgb), 0.48) 76%,
+            rgba(var(--bg-dark-rgb), 0.78) 88%,
+            rgba(var(--bg-dark-rgb), 1) 100%);
+}
+
 
 .section-heading {
     margin-bottom: 42px;
@@ -812,3 +873,4 @@ img {
         margin-bottom: 14px;
     }
 }
+
