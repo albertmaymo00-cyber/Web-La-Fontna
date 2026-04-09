@@ -80,7 +80,7 @@
 }
 
 #allergen-tooltip {
-    position: fixed;
+    position: absolute;
     background: #111;
     color: #fff;
     padding: 6px 12px;

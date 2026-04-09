@@ -874,3 +874,52 @@ img {
     }
 }
 
+/* -------------------- ALERGENOS -------------------- */
+
+
+.allergens {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.allergen {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f4f4f4;
+    color: #222;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+    cursor: default;
+}
+
+.allergen svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+.allergen:hover {
+    background: #222;
+    color: #fff;
+    transform: scale(1.08);
+}
+.allergens {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.allergen-icon {
+    width: 18px;
+    height: 18px;
+    transition: 0.2s ease;
+    cursor: help;
+    opacity: 0.9;
+}
+

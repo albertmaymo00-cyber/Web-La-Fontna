@@ -62,8 +62,7 @@
                     </svg>
                     <span>Gluten</span>
                 </div>
-    
-</svg>
+
                 <div class="allergen-legend-item">
                     <svg class="allergen-icon crustaceos" aria-hidden="true">
                         <use href="#icon-crustaceos"></use>
@@ -296,12 +295,6 @@
                 </div>
             </article>
         </section>
-    </main>
-
-    
-</body>
-
-</html>
 
         <section class="menu-section" data-section="ensaladas">
             <div class="section-title-block">
@@ -463,20 +456,24 @@
                     console.error("No se pudieron cargar los iconos de alérgenos:", error);
                 });
         </script>
-        
-        <script>
+          <script>
             const icons = document.querySelectorAll(".allergen-icon[data-name]");
             const tooltip = document.getElementById("allergen-tooltip");
 
             let activeIcon = null;
+
+            function positionTooltip(icon) {
+                const rect = icon.getBoundingClientRect();
+
+                tooltip.style.left = rect.left + rect.width / 2 + "px";
+                tooltip.style.top = rect.top + window.scrollY + "px";
+            }
 
             icons.forEach(icon => {
                 icon.addEventListener("click", (e) => {
                     e.stopPropagation();
 
                     const name = icon.dataset.name;
-                    const rect = icon.getBoundingClientRect();
-
                     if (activeIcon === icon) {
                         tooltip.classList.remove("active");
                         activeIcon = null;
@@ -484,19 +481,23 @@
                     }
 
                     tooltip.textContent = name;
-                    tooltip.style.left = rect.left + rect.width / 2 + "px";
-                    tooltip.style.top = rect.top + "px";
+                    positionTooltip(icon);
 
                     tooltip.classList.add("active");
                     activeIcon = icon;
                 });
             });
-
+            window.addEventListener("scroll", () => {
+                if (activeIcon) {
+                    positionTooltip(activeIcon);
+                }
+            });
             document.addEventListener("click", () => {
                 tooltip.classList.remove("active");
                 activeIcon = null;
             });
         </script>
+       
         </body>
         
         </html>
